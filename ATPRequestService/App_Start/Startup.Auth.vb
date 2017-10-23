@@ -4,7 +4,7 @@ Imports Microsoft.AspNet.Identity
 Imports Microsoft.AspNet.Identity.EntityFramework
 Imports Microsoft.Owin
 Imports Microsoft.Owin.Security.Cookies
-Imports Microsoft.Owin.Security.Google
+
 Imports Microsoft.Owin.Security.OAuth
 Imports Owin
 

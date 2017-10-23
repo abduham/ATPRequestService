@@ -17,23 +17,13 @@ Namespace Areas.HelpPage.ModelDescriptions
     ''' </summary>
     Public Class ModelDescriptionGenerator
         ' Modify this to support more data annotation attributes.
-        Private ReadOnly AnnotationTextGenerator As IDictionary(Of Type, Func(Of Object, String)) = New Dictionary(Of Type, Func(Of Object, String))() From { _
+        Private ReadOnly AnnotationTextGenerator As IDictionary(Of Type, Func(Of Object, String)) = New Dictionary(Of Type, Func(Of Object, String))() From {
             {GetType(RequiredAttribute),
              Function(a) "Required"},
             {GetType(RangeAttribute),
              Function(a)
                  Dim range As RangeAttribute = DirectCast(a, RangeAttribute)
                  Return [String].Format(CultureInfo.CurrentCulture, "Range: inclusive between {0} and {1}", range.Minimum, range.Maximum)
-             End Function},
-            {GetType(MaxLengthAttribute),
-             Function(a)
-                 Dim maxLength As MaxLengthAttribute = DirectCast(a, MaxLengthAttribute)
-                 Return [String].Format(CultureInfo.CurrentCulture, "Max length: {0}", maxLength.Length)
-             End Function},
-            {GetType(MinLengthAttribute),
-             Function(a)
-                 Dim minLength As MinLengthAttribute = DirectCast(a, MinLengthAttribute)
-                 Return [String].Format(CultureInfo.CurrentCulture, "Min length: {0}", minLength.Length)
              End Function},
             {GetType(StringLengthAttribute),
              Function(a)
