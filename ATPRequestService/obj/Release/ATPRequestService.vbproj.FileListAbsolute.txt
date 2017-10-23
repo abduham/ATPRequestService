@@ -137,3 +137,4 @@ C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\bin\System.
 C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\obj\Release\ATPRequestService.dll
 C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\obj\Release\ATPRequestService.xml
 C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\obj\Release\ATPRequestService.pdb
+C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\obj\Release\ATPRequestService.vbprojResolveAssemblyReference.cache
