@@ -1,4 +1,7 @@
 C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\bin\ApplicationInsights.config
+C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\bin\Web.config
+C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\bin\Web.Debug.config
+C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\bin\Web.Release.config
 C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\bin\ATPRequestService.dll.config
 C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\bin\ATPRequestService.dll
 C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\bin\ATPRequestService.pdb
@@ -65,7 +68,6 @@ C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\bin\System.
 C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\bin\System.Web.WebPages.Deployment.xml
 C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\bin\System.Web.WebPages.Razor.xml
 C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\obj\Debug\ATPRequestService.vbprojResolveAssemblyReference.cache
 C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\obj\Debug\ATPRequestService.Resources.resources
 C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\obj\Debug\ATPRequestService.vbproj.GenerateResource.Cache
 C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\obj\Debug\ATPRequestService.dll
