@@ -3,7 +3,7 @@ Imports System.Net.Http
 Imports System.Threading
 Imports System.Threading.Tasks
 Imports System.Web.Http
-Imports Microsoft.Owin.Security
+
 
 Public Class ChallengeResult
     Implements IHttpActionResult
@@ -16,7 +16,7 @@ Public Class ChallengeResult
     Public Property Request As HttpRequestMessage
 
     Public Function ExecuteAsync(cancellationToken As CancellationToken) As Task(Of HttpResponseMessage) Implements IHttpActionResult.ExecuteAsync
-        Request.GetOwinContext().Authentication.Challenge(LoginProvider)
+
 
         Dim response As New HttpResponseMessage(HttpStatusCode.Unauthorized)
         response.RequestMessage = Request
