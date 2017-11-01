@@ -70,6 +70,5 @@ C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\bin\Microso
 C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\obj\Release\ATPRequestService.dll
 C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\obj\Release\ATPRequestService.xml
 C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\obj\Release\ATPRequestService.pdb
-C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\obj\Release\ATPRequestService.vbprojResolveAssemblyReference.cache
 C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\bin\System.Diagnostics.DiagnosticSource.dll
 C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\bin\System.Diagnostics.DiagnosticSource.xml

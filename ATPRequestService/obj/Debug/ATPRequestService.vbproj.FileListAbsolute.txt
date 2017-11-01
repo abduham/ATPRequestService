@@ -1,7 +1,4 @@
 C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\bin\ApplicationInsights.config
-C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\bin\Web.config
-C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\bin\Web.Debug.config
-C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\bin\Web.Release.config
 C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\bin\ATPRequestService.dll.config
 C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\bin\ATPRequestService.dll
 C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\bin\ATPRequestService.pdb
@@ -73,3 +70,6 @@ C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\obj\Debug\A
 C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\obj\Debug\ATPRequestService.dll
 C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\obj\Debug\ATPRequestService.xml
 C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\obj\Debug\ATPRequestService.pdb
+C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\jabric\Documents\GitHub\ATPRequestService\ATPRequestService\obj\Debug\ATPRequestService.vbprojResolveAssemblyReference.cache
