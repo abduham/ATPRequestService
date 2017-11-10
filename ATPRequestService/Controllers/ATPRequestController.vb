@@ -75,6 +75,7 @@ Namespace Controllers
                     " APPS.XXMRP_FF2_ORC_ATP_VLVS_PKG.xxom_add_sub_lead_time ('ADD',MAST.scheduled_arrival_date,XMRP.CALC_OFFSET_DAYS,XMRP.SHIP_CALENDAR_CODE) Calc_scheduled_arrival_date," &
                     " APPS.XXMRP_FF2_ORC_ATP_VLVS_PKG.xxom_add_sub_lead_time ('ADD',MAST.GROUP_ARRIVAL_DATE,XMRP.CALC_OFFSET_DAYS,XMRP.SHIP_CALENDAR_CODE) Calc_GROUP_ARRIVAL_DATE " &
                     " From APPS.MRP_ATP_SCHEDULE_TEMP_V MAST, XXMRP.XXMRP_ATP_INQ_DTLS_EPM XMRP Where status_flag = 2 And mast.session_id = " & Math.Abs(_OracleReq.O_SESSION_ID) & " And XMRP.session_id = mast.session_id ORDER BY SEQUENCE_NUMBER"
+                .CommandTimeout = 60 * 4
                 Dim dr As Client.OracleDataReader = .ExecuteReader
                 Dim resultString As String
                 resultString = ""
@@ -132,7 +133,11 @@ Namespace Controllers
                     Return l_list
 
                 ElseIf _OracleReq.O_RETURN_STATUS <> "" Then
-
+                    Dim l_return As New ATPResultObj
+                    l_return.ERROR_MESSAGE = _OracleReq.O_RETURN_STATUS
+                    l_return.INVENTORY_ITEM_NAME = _OracleReq.P_ITEMS
+                    l_list.Add(l_return)
+                    Return l_list
 
                 Else
                     Dim l_return As New ATPResultObj
@@ -234,13 +239,23 @@ Namespace Controllers
                 .Direction = ParameterDirection.Output
             End With
             Dim da = New Client.OracleDataAdapter(l_command)
-            l_command.ExecuteNonQuery()
-            reqobj.O_SESSION_ID = Convert.ToDecimal(l_command.Parameters.Item("O_SESSION_ID").Value.ToString)
-            reqobj.O_RETURN_MSG = l_command.Parameters.Item("O_RETURN_MSG").Value.ToString
-            reqobj.O_RETURN_STATUS = l_command.Parameters.Item("O_RETURN_STATUS").Value.ToString
+            Try
+                l_command.ExecuteNonQuery()
+                reqobj.O_SESSION_ID = Convert.ToDecimal(l_command.Parameters.Item("O_SESSION_ID").Value.ToString)
+                reqobj.O_RETURN_MSG = l_command.Parameters.Item("O_RETURN_MSG").Value.ToString
+                reqobj.O_RETURN_STATUS = l_command.Parameters.Item("O_RETURN_STATUS").Value.ToString
+            Catch ex As Exception
+                reqobj.O_SESSION_ID = 0
+                reqobj.O_RETURN_MSG = ex.Message
+                If Not ex.InnerException Is Nothing Then
+                    reqobj.O_RETURN_STATUS = ex.InnerException.Message
+                End If
+            End Try
             Return reqobj
             da.Dispose()
-            l_command.Dispose()
+            If Not l_command Is Nothing Then
+                l_command.Dispose()
+            End If
             _connection.Close()
             'New Client.OracleParameter("P_ORG_CODE", Client.OracleDbType.Char(8000)))
         End Function
