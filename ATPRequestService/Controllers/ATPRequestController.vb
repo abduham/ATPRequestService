@@ -239,7 +239,6 @@ Namespace Controllers
                 .Direction = ParameterDirection.Output
             End With
             Dim da = New Client.OracleDataAdapter(l_command)
-            l_command.ExecuteNonQuery()
             Try
                 l_command.ExecuteNonQuery()
                 reqobj.O_SESSION_ID = Convert.ToDecimal(l_command.Parameters.Item("O_SESSION_ID").Value.ToString)
