@@ -1,12 +1,11 @@
 ﻿Imports System.Net
 Imports System.Web.Http
-Imports Oracle.DataAccess
-
+Imports Oracle.ManagedDataAccess
 
 Namespace Controllers
     Public Class ATPRequestController
         Inherits ApiController
-        Dim _connection As Client.OracleConnection
+        Dim _connection As Oracle.ManagedDataAccess.Client.OracleConnection
         <Route("ATPRequestSessionID")>
         Public Function ATPRequestSessionID(reqobj As ATPRequestObj) As Int32
             GetDBConnection()
@@ -33,12 +32,12 @@ Namespace Controllers
             '"(HOST=usmtnpmdinfdb83.dev.emrsn.org)(PORT=35601))(CONNECT_DATA=" +
             '"(SERVICE_NAME=BetsyK1)))"
         End Function
-        Private Function connecttoOracledb() As Client.OracleConnection
+        Private Function connecttoOracledb() As Oracle.ManagedDataAccess.Client.OracleConnection
             Return (New Client.OracleConnection(GetOracleconnectionstring))
         End Function
         <Route("TestDBConnection")>
         Public Function testdbconnection() As Boolean
-            Dim l_connection As New Client.OracleConnection
+            Dim l_connection As New Oracle.ManagedDataAccess.Client.OracleConnection
             l_connection.ConnectionString = GetOracleconnectionstring()
             l_connection.Open()
             Return True
@@ -76,7 +75,7 @@ Namespace Controllers
                     " APPS.XXMRP_FF2_ORC_ATP_VLVS_PKG.xxom_add_sub_lead_time ('ADD',MAST.scheduled_arrival_date,XMRP.CALC_OFFSET_DAYS,XMRP.SHIP_CALENDAR_CODE) Calc_scheduled_arrival_date," &
                     " APPS.XXMRP_FF2_ORC_ATP_VLVS_PKG.xxom_add_sub_lead_time ('ADD',MAST.GROUP_ARRIVAL_DATE,XMRP.CALC_OFFSET_DAYS,XMRP.SHIP_CALENDAR_CODE) Calc_GROUP_ARRIVAL_DATE " &
                     " From APPS.MRP_ATP_SCHEDULE_TEMP_V MAST, XXMRP.XXMRP_ATP_INQ_DTLS_EPM XMRP Where status_flag = 2 And mast.session_id = " & Math.Abs(_OracleReq.O_SESSION_ID) & " And XMRP.session_id = mast.session_id ORDER BY SEQUENCE_NUMBER"
-                .CommandTimeout = 60 * 5
+                .CommandTimeout = 60 * 4
                 Dim dr As Client.OracleDataReader = .ExecuteReader
                 Dim resultString As String
                 resultString = ""
@@ -169,7 +168,7 @@ Namespace Controllers
             '    reqobj.P_SHIP_METHOD = ""
             '    reqobj.P_UOM = ""
             'End If
-            Dim l_command As Client.OracleCommand
+            Dim l_command As Oracle.ManagedDataAccess.Client.OracleCommand
             l_command = New Client.OracleCommand()
             l_command.Connection = _connection
             l_command.CommandType = CommandType.StoredProcedure
