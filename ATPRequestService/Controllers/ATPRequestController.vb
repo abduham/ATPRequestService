@@ -1,11 +1,12 @@
 ﻿Imports System.Net
 Imports System.Web.Http
-Imports Oracle.ManagedDataAccess
+Imports Oracle.DataAccess
+
 
 Namespace Controllers
     Public Class ATPRequestController
         Inherits ApiController
-        Dim _connection As Oracle.ManagedDataAccess.Client.OracleConnection
+        Dim _connection As Client.OracleConnection
         <Route("ATPRequestSessionID")>
         Public Function ATPRequestSessionID(reqobj As ATPRequestObj) As Int32
             GetDBConnection()
@@ -32,12 +33,12 @@ Namespace Controllers
             '"(HOST=usmtnpmdinfdb83.dev.emrsn.org)(PORT=35601))(CONNECT_DATA=" +
             '"(SERVICE_NAME=BetsyK1)))"
         End Function
-        Private Function connecttoOracledb() As Oracle.ManagedDataAccess.Client.OracleConnection
+        Private Function connecttoOracledb() As Client.OracleConnection
             Return (New Client.OracleConnection(GetOracleconnectionstring))
         End Function
         <Route("TestDBConnection")>
         Public Function testdbconnection() As Boolean
-            Dim l_connection As New Oracle.ManagedDataAccess.Client.OracleConnection
+            Dim l_connection As New Client.OracleConnection
             l_connection.ConnectionString = GetOracleconnectionstring()
             l_connection.Open()
             Return True
@@ -168,7 +169,7 @@ Namespace Controllers
             '    reqobj.P_SHIP_METHOD = ""
             '    reqobj.P_UOM = ""
             'End If
-            Dim l_command As Oracle.ManagedDataAccess.Client.OracleCommand
+            Dim l_command As Client.OracleCommand
             l_command = New Client.OracleCommand()
             l_command.Connection = _connection
             l_command.CommandType = CommandType.StoredProcedure
