@@ -1,5 +1,5 @@
 ﻿Imports System.Web
-Imports System.Web.Optimization
+
 
 Public Module BundleConfig
     ' For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
